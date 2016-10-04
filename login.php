@@ -37,7 +37,7 @@ if(isset($_SESSION["userID"])){
 	$registerPasswordError ="";
 	$personalError="";
 	
-	$signupEmail = "";	
+	$regiterEmail = "";	
 	$signupGender = "";
 	
 if( isset($_POST["signupGender"] )){
@@ -204,7 +204,7 @@ if( isset($_POST["registerPassword"] )){
 
 	
 	//echo $serverUsername;
-	
+	var_dump($_POST);
 	$error ="";
 	if( isset($_POST["signupEmail"]) && isset($_POST["signupPassword"])&&
 			!empty($_POST["signupEmail"]) && !empty($_POST["signupPassword"])
@@ -229,15 +229,15 @@ if( isset($_POST["registerPassword"] )){
 
 
 	<form method=POST>
+<?php echo $error;  ?>
 
 
-
-		<input name=signupEmail placeholder="e-mail" type="text" value="<?=$signupEmail;?>"> <?php echo $signupEmailError;  ?>
+		<input name="signupEmail" placeholder="e-mail" type="text" value="<?=$signupEmail;?>"> <?php echo $signupEmailError;  ?>
 
 	<br><br>
 
 
-		<input name=signupPassword placeholder="parool" type="password"> <?php echo $signupPasswordError; ?>
+		<input name="signupPassword" placeholder="parool" type="password"> <?php echo $signupPasswordError; ?>
 
 	<br>
 
